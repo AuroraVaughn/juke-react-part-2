@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import AllAlbums from './AllAlbums';
+import StatefulAlbums from './StatefulAlbums.jsx';
+// import AllAlbums from './AllAlbums.jsx';
 import SingleAlbum from './SingleAlbum';
 import Sidebar from './Sidebar';
 import Player from './Player';
@@ -20,9 +21,11 @@ export default class Main extends Component {
             <Sidebar />
           </div>
           <div className="col-xs-10">
-            <Route exact path="/" component={AllAlbums} />
-            <Route exact path="/albums" component={AllAlbums} />
-            <Route path="/albums/:albumId" component={SingleAlbum} />
+
+            <Route exact path="/" component={StatefulAlbums} />
+            <Route exact path="/albums" component={StatefulAlbums} />
+
+            <Route exact path="/albums/:albumId" component={SingleAlbum} />
             <Route exact path="/artists" component={AllArtists} />
             <Route exact path="/artists/:artistId" component={SingleArtist} />
           </div>
